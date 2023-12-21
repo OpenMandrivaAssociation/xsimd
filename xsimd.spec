@@ -1,7 +1,7 @@
 %define devname %mklibname xsimd -d
 
 Name: xsimd
-Version: 11.1.0
+Version: 12.1.1
 Release: 1
 Source0: https://github.com/xtensor-stack/xsimd/archive/%{version}/%{name}-%{version}.tar.gz
 Summary: C++ wrappers for SIMD intrinsics and parallelized, optimized mathematical functions
