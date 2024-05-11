@@ -1,15 +1,14 @@
 %define devname %mklibname xsimd -d
 
 Name: xsimd
-Version: 12.1.1
+Version: 13.0.0
 Release: 1
 Source0: https://github.com/xtensor-stack/xsimd/archive/%{version}/%{name}-%{version}.tar.gz
 Summary: C++ wrappers for SIMD intrinsics and parallelized, optimized mathematical functions
 License: BSD-3-Clause
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: ninja
 BuildArch: noarch
+BuildSystem: cmake
 
 %description
 SIMD (Single Instruction, Multiple Data) is a feature of microprocessors that
@@ -40,16 +39,6 @@ xsimd provides a unified means for using these features for library authors.
 Namely, it enables manipulation of batches of numbers with the same arithmetic
 operators as for single values. It also provides accelerated implementation of
 common mathematical functions operating on batches.
-
-%prep
-%autosetup -p1
-%cmake -G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
 
 %files -n %{devname}
 %{_includedir}/*
