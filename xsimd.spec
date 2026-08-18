@@ -9,6 +9,10 @@ License: BSD-3-Clause
 Group: System/Libraries
 BuildArch: noarch
 BuildSystem: cmake
+# xtl is optional (XSIMD_ENABLE_XTL_COMPLEX is off). The CMake
+# file still contains find_dependency(xtl 0.8.0) and the generator
+# emits cmake(xtl) >= 0.8.0, which cooker cannot satisfy.
+%global __requires_exclude %{?__requires_exclude:%{__requires_exclude}|}^cmake\\(xtl\\)
 
 %description
 SIMD (Single Instruction, Multiple Data) is a feature of microprocessors that
